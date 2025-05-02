@@ -40,7 +40,7 @@ public class ConsultaServlet extends HttpServlet {
         if (emailBusqueda != null && !emailBusqueda.isEmpty()){
             Usuario usuarioEncontrado = null;
             
-            for (Usuario usaurio : listaUsuarios) {
+            for (Usuario usuario : listaUsuarios) {
                 if (usuario.getEmail().equals(emailBusqueda)) {
                     usuarioEncontrado = usuario;
                     break;
