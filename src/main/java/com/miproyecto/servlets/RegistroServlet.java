@@ -1,0 +1,72 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
+package com.miproyecto.servlets;
+
+import com.miproyecto.modelo.Usuario;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ *
+ * @author Personal
+ */
+public class RegistroServlet extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    
+    
+     
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        
+        Usuario nuevoUsuario = new Usuario (nombre, apellido, email, password);
+        
+        HttpSession session = request.getSession();
+        
+        List<Usuario> listaUsuarios = (List<Usuario>) session.getAttribute("listaUsuarios");
+        if (listaUsuarios == null) {
+            listaUsuarios = new ArrayList<>();
+            session.setAttribute("listaUsuarios", listaUsuarios);
+        }
+        
+        listaUsuarios.add(nuevoUsuario);
+        
+        request.setAttribute("mensaje","¡Usuario registrado con éxito!");
+        
+        request.getRequestDispatcher("/registro.jsp").forward(request, response);
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
+}
