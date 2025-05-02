@@ -49,7 +49,7 @@ public class ConsultaServlet extends HttpServlet {
             request.setAttribute("usuarioBuscado", usuarioEncontrado);
             request.setAttribute("busquedaRealizada", true);
         }
-        request.getRequestDispatcher("/consulta.jsp");
+        request.getRequestDispatcher("/consulta.jsp").forward(request, response);
     }
 
     /**
