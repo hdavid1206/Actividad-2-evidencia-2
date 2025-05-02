@@ -1,6 +1,6 @@
 <%-- 
     Document   : index.jsp
-    Created on : 2/05/2025, 7:26:08 a. m.
+    Created on : 2/05/2025, 7:26:08 a. m.
     Author     : Personal
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Sistema de Registro</title>
     </head>
     <body>
         <div class="container">
@@ -18,7 +18,6 @@
                 <a href="registro">Registrar Usuario</a>
                 <a href="consulta">Consultar Usuarios</a>
             </div>  
-            
         </div>
     </body>
 </html>
