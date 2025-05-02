@@ -58,15 +58,17 @@ public class RegistroServlet extends HttpServlet {
         
         request.getRequestDispatcher("/registro.jsp").forward(request, response);
     }
+    
+    @Override
+    protected void doGet(HttpServletRequest request,HttpServletResponse response)
+            throws ServletException,IOException{
+        request.getRequestDispatcher("/registro.jsp").forward(request,response);
+    }
 
     /**
      * Returns a short description of the servlet.
      *
      * @return a String containing servlet description
      */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
+    
 }
