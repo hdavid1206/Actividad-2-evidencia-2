@@ -13,7 +13,9 @@ private String nombre;
     private String apellido;
     private String email;
     private String password;
-    
+
+public Usuario(){
+}    
     public Usuario(String nombre, String apellido, String email, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
